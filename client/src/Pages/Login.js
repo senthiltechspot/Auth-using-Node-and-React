@@ -46,7 +46,7 @@ const Login = () => {
         cookies.set("accessToken", result.data.accessToken, {
           path: "/",
         });
-        window.location.href = "/protected";
+        window.location.href = "/";
         // console.log(result)
       })
       .catch((error) => {

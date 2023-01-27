@@ -1,6 +1,11 @@
 import "./App.css";
 import Register from "./Pages/Register";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Login from "./Pages/Login";
 import Protected from "./Pages/Protected";
 import Cookies from "universal-cookie";
@@ -13,21 +18,21 @@ function App() {
   };
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Routes>
-          <Route path="/" element={<Register />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+          {/* <Route path="/" element={<Register />} /> */}
           <Route
-            path="/protected"
+            path="/"
             element={
               <PrivateRoute>
                 <Protected />
               </PrivateRoute>
             }
-          ></Route>
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

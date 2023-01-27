@@ -45,7 +45,7 @@ const Register = () => {
         // console.log(result);
         setRegister(1);
 
-        window.location.href = "/protected";
+        window.location.href = "/";
       })
       .catch((error) => {
         setRegister(2);
